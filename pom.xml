@@ -6,20 +6,20 @@
   <parent>
     <groupId>org.jooby</groupId>
     <artifactId>jooby-project</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.2</version>
   </parent>
 
-  <artifactId>hello-starter</artifactId>
-  <groupId>starter.hello</groupId>
+  <artifactId>pebble-starter</artifactId>
+  <groupId>starter.pebble</groupId>
   <version>1.0</version>
 
-  <name>hello-starter</name>
+  <name>pebble-starter</name>
 
   <properties>
-    <jooby.version>1.2.0</jooby.version>
+    <jooby.version>1.2.2</jooby.version>
 
     <!-- Startup class -->
-    <application.class>starter.hello.App</application.class>
+    <application.class>starter.pebble.App</application.class>
   </properties>
 
   <dependencies>
@@ -31,7 +31,7 @@
 
     <dependency>
       <groupId>org.jooby</groupId>
-      <artifactId>jooby-jackson</artifactId>
+      <artifactId>jooby-pebble</artifactId>
     </dependency>
 
     <!-- Tests -->

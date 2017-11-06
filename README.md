@@ -1,31 +1,30 @@
-[![Build Status](https://travis-ci.org/jooby-project/hello-starter.svg?branch=master)](https://travis-ci.org/jooby-project/hello-starter)
-# hello starter
+[![Build Status](https://travis-ci.org/jooby-project/pebble-starter.svg?branch=master)](https://travis-ci.org/jooby-project/pebble-starter)
+# pebble starter
 
-JSON Starter project.
+[Pebble](http://www.mitchellbosecke.com/pebble/home) template engine starter project.
 
 ## quick preview
 
 This project contains a simple application that:
 
-* Accept an optional `name` HTTP parameter
-* Creates a POJO and send the response back as JSON
+* Render a HTML page using [Pebble](http://www.mitchellbosecke.com/pebble/home) template engine
 
-[App.java](https://github.com/jooby-project/hello-starter/blob/master/src/main/java/starter/hello/App.java):
+[App.java](https://github.com/jooby-project/pebble-starter/blob/master/src/main/java/starter/pebble/App.java):
 
 ```java
+/**
+ * Pebble starter project.
+ */
 public class App extends Jooby {
 
   {
-    /** Render JSON: */
-    use(new Jackson());
+    /** Template engine: */
+    use(new Pebble("templates", ".html"));
 
-    /**
-     * Say hello:
-     */
-    get("/", req -> {
-      String name = req.param("name").value("Jooby");
-      return new Message("Hello " + name + "!");
-    });
+    /** Render home: */
+    get(() -> Results.html("home")
+        .put("name", "Pebble"));
+
   }
 
   public static void main(final String[] args) {
@@ -41,6 +40,6 @@ public class App extends Jooby {
 
 ## help
 
-* Read the [jooby documentation](http://jooby.org/doc)
+* Read the [pebble documentation](http://jooby.org/doc/pebble)
 * Join the [channel](https://gitter.im/jooby-project/jooby)
 * Join the [group](https://groups.google.com/forum/#!forum/jooby-project)
